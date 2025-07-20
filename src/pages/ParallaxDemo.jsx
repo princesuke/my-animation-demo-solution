@@ -36,27 +36,27 @@ export default function ParallaxDemo() {
   }, []);
 
   return (
-    <FadeTransition>
-      <div className="relative w-full h-[60vh] flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 overflow-hidden">
-        <div
-          ref={layer3}
-          className="absolute w-80 h-80 bg-purple-300 rounded-full opacity-60"
-          style={{ zIndex: 1, top: 60, left: 60 }}
-        />
-        <div
-          ref={layer2}
-          className="absolute w-60 h-60 bg-blue-300 rounded-full opacity-70"
-          style={{ zIndex: 2, top: 120, left: 220 }}
-        />
-        <div
-          ref={layer1}
-          className="absolute w-40 h-40 bg-pink-300 rounded-full opacity-80"
-          style={{ zIndex: 3, top: 180, left: 120 }}
-        />
-        <div className="relative z-10 text-3xl font-bold text-gray-700">
-          Parallax Demo
-        </div>
+    // <FadeTransition>
+    <div className="relative w-full h-[60vh] flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 overflow-hidden">
+      <div
+        ref={layer3}
+        className="absolute w-80 h-80 bg-purple-300 rounded-full opacity-60"
+        style={{ zIndex: 1, top: 60, left: 60 }}
+      />
+      <div
+        ref={layer2}
+        className="absolute w-60 h-60 bg-blue-300 rounded-full opacity-70"
+        style={{ zIndex: 2, top: 120, left: 220 }}
+      />
+      <div
+        ref={layer1}
+        className="absolute w-40 h-40 bg-pink-300 rounded-full opacity-80"
+        style={{ zIndex: 3, top: 180, left: 120 }}
+      />
+      <div className="relative z-10 text-3xl font-bold text-gray-700">
+        Parallax Demo
       </div>
-    </FadeTransition>
+    </div>
+    // </FadeTransition>
   );
 }
