@@ -3,8 +3,9 @@ import StaggerDemo from "../components/StaggerDemo";
 import ScaleRotateDemo from "../components/ScaleRotateDemo";
 import TimelineDemo from "../components/TimelineDemo";
 import DragDemo from "../components/DragDemo";
+import BallMotionPath from "../components/BallMotionPath";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-gray-100 py-10 space-y-10">
       <h1 className="text-2xl font-bold text-center">Demos</h1>
@@ -13,6 +14,7 @@ export default function Home() {
       <ScaleRotateDemo />
       <TimelineDemo />
       <DragDemo />
+      <BallMotionPath />
     </div>
   );
 }

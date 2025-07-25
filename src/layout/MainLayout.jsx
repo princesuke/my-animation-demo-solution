@@ -14,8 +14,7 @@ export default function Layout() {
         console.log("Transition started");
         setIsExit(false);
         resolve();
-      }, duration); // Simulate some delay for the transition
-      // Resolve the promise immediately for simplicity
+      }, duration);
     });
 
   return (
@@ -28,13 +27,30 @@ export default function Layout() {
             onBeforeNavigate={handleBeforeNavigate}
           >
             Home
-          </TransitionLink>
+          </TransitionLink>{" "}
+          |
           <TransitionLink
             to="/parallax"
             className="  hover:underline"
             onBeforeNavigate={handleBeforeNavigate}
           >
-            Parallax Demo
+            Parallax
+          </TransitionLink>{" "}
+          |
+          <TransitionLink
+            to="/ball-path"
+            className="hover:underline"
+            onBeforeNavigate={handleBeforeNavigate}
+          >
+            Ball Path
+          </TransitionLink>{" "}
+          |
+          <TransitionLink
+            to="/scroll-observer"
+            className="hover:underline"
+            onBeforeNavigate={handleBeforeNavigate}
+          >
+            Scroll Observer
           </TransitionLink>
         </nav>
       </div>

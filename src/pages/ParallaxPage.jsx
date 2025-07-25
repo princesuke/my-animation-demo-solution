@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import { animate } from "animejs";
-import FadeTransition from "../transitions/FadeTransition";
 
-export default function ParallaxDemo() {
+export default function ParallaxPage() {
   const layer1 = useRef(null);
   const layer2 = useRef(null);
   const layer3 = useRef(null);
