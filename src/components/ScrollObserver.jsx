@@ -1,27 +1,31 @@
 import { useEffect } from "react";
-import anime from "animejs";
+import { animate, stagger, onScroll } from "animejs";
 
 export default function ScrollObserver() {
+  // const scrollRef = useRef < HTMLDivElement > null;
+
   useEffect(() => {
-    anime({
-      targets: ".box-scroll",
-      translateX: "12rem",
+    /* โหลดแอนิเมชันเมื่อคอมโพเนนต์ mounted */
+    animate(".box-scroll", {
+      x: "12rem", // v4 ใช้ x / y แทน translateX/translateY
       rotate: "1turn",
-      delay: anime.stagger(100, { from: "last" }),
-      easing: "linear",
-      autoplay: anime.onScroll({
-        container: ".scroll-container",
-        enter: "bottom-=60 top",
-        leave: "top+=60 bottom",
-        sync: "inOutCirc",
-        debug: false,
-      }),
+      delay: stagger(100, { from: "last" }),
+      ease: "linear", // v4 เปลี่ยนชื่อจาก easing → ease
+      autoplay: onScroll({ sync: "inOutCirc" }), // ปิด autoplay เพื่อรอการ scroll
+      // autoplay: onScroll({
+      //   // container: ".scroll-container",
+      //   // container: scrollRef.current,
+      //   // enter: "bottom-=60 top",
+      //   // leave: "top+=60 bottom",
+      //   sync: "inOutCirc",
+      //   debug: false,
+      // }),
     });
   }, []);
 
   return (
     <div
-      className="scroll-container"
+      className="scroll-container bg-pink-300"
       style={{
         minHeight: "160vh",
         overflowY: "scroll",
@@ -30,6 +34,7 @@ export default function ScrollObserver() {
       }}
     >
       <div style={{ height: 200 }} />
+
       <div
         className="box-grid"
         style={{
@@ -40,59 +45,31 @@ export default function ScrollObserver() {
           minHeight: 240,
         }}
       >
-        <div
-          className="box-scroll"
-          style={{
-            width: 80,
-            height: 80,
-            borderRadius: 16,
-            background: "#a5b4fc",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 32,
-            fontWeight: "bold",
-          }}
-        >
-          A
-        </div>
-        <div
-          className="box-scroll"
-          style={{
-            width: 80,
-            height: 80,
-            borderRadius: 16,
-            background: "#6ee7b7",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 32,
-            fontWeight: "bold",
-          }}
-        >
-          B
-        </div>
-        <div
-          className="box-scroll"
-          style={{
-            width: 80,
-            height: 80,
-            borderRadius: 16,
-            background: "#facc15",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 32,
-            fontWeight: "bold",
-          }}
-        >
-          C
-        </div>
+        {["#a5b4fc", "#6ee7b7", "#facc15"].map((bg, i) => (
+          <div
+            key={i}
+            className="box-scroll"
+            style={{
+              width: 80,
+              height: 80,
+              borderRadius: 16,
+              background: bg,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: 32,
+              fontWeight: "bold",
+            }}
+          >
+            {"ABC"[i]}
+          </div>
+        ))}
       </div>
+
       <div style={{ height: 400 }} />
-      <div style={{ textAlign: "center", color: "#94a3b8", fontSize: 20 }}>
+      {/* <div style={{ textAlign: "center", color: "#94a3b8", fontSize: 20 }}>
         Scroll up & down to see the boxes animate.
-      </div>
+      </div> */}
     </div>
   );
 }

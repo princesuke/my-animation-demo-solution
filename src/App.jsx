@@ -3,6 +3,7 @@ import ParallaxPage from "./pages/ParallaxPage";
 import MainLayout from "./layout/MainLayout";
 import HomePage from "./pages/HomePage";
 import BallPathPage from "./pages/BallPathPage";
+import ScrollObserverPage from "./pages/ScrollObserverPage";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="parallax" element={<ParallaxPage />} />
           <Route path="ball-path" element={<BallPathPage />} />
-          {/* เพิ่ม Route อื่นๆ ที่นี่ */}
+          <Route path="scroll-observer" element={<ScrollObserverPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -3,7 +3,6 @@ import StaggerDemo from "../components/StaggerDemo";
 import ScaleRotateDemo from "../components/ScaleRotateDemo";
 import TimelineDemo from "../components/TimelineDemo";
 import DragDemo from "../components/DragDemo";
-import BallMotionPath from "../components/BallMotionPath";
 
 export default function HomePage() {
   return (
@@ -14,7 +13,6 @@ export default function HomePage() {
       <ScaleRotateDemo />
       <TimelineDemo />
       <DragDemo />
-      <BallMotionPath />
     </div>
   );
 }
