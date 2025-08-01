@@ -4,6 +4,7 @@ import MainLayout from "./layout/MainLayout";
 import HomePage from "./pages/HomePage";
 import BallPathPage from "./pages/BallPathPage";
 import ScrollObserverPage from "./pages/ScrollObserverPage";
+import TargetPositionPage from "./pages/TargetPositionPage";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
           <Route path="parallax" element={<ParallaxPage />} />
           <Route path="ball-path" element={<BallPathPage />} />
           <Route path="scroll-observer" element={<ScrollObserverPage />} />
+          <Route path="target-position" element={<TargetPositionPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -51,6 +51,14 @@ export default function Layout() {
             onBeforeNavigate={handleBeforeNavigate}
           >
             Scroll Observer
+          </TransitionLink>{" "}
+          |
+          <TransitionLink
+            to="/target-position"
+            className="hover:underline"
+            onBeforeNavigate={handleBeforeNavigate}
+          >
+            Target Position
           </TransitionLink>
         </nav>
       </div>
