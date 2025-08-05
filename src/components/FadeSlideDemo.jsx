@@ -1,8 +1,9 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { animate } from "animejs";
 
 export default function FadeSlideDemo() {
   const ref = useRef(null);
+  const [isSlideLeft, setIsSlideLeft] = useState(false);
 
   const handleAnimate = () => {
     animate(ref.current, {
@@ -26,6 +27,18 @@ export default function FadeSlideDemo() {
         onClick={handleAnimate}
       >
         Animate
+      </button>
+      <div className="h-3"></div>
+      <div
+        className={`box1 h-3 w-3 bg-amber-500 ${
+          isSlideLeft ? "translate-x-[30px] scale-150" : ""
+        } transition-all duration-[300ms] ease-in-out`}
+      ></div>
+      <button
+        className="bg-blue-700 px-3 py-1 text-white rounded-sm cursor-pointer"
+        onClick={() => setIsSlideLeft(!isSlideLeft)}
+      >
+        <span className="text-sm">Click to animate box</span>
       </button>
     </div>
   );

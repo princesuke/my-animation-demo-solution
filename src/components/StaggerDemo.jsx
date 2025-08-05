@@ -20,7 +20,7 @@ export default function StaggerDemo() {
       translateY: [40, 0],
       delay: stagger(120),
       duration: 600,
-      easing: "easeOutCubic",
+      ease: "easeOutCubic",
       loop: true,
     });
   }, []);
@@ -45,6 +45,8 @@ export default function StaggerDemo() {
       </button>
 
       <div className="flex gap-2 mt-2">
+        <div className="box w-4 h-4 bg-amber-300"></div>
+        <div className="box w-4 h-4 bg-amber-300"></div>
         <div className="box w-4 h-4 bg-amber-300"></div>
         <div className="box w-4 h-4 bg-amber-300"></div>
         <div className="box w-4 h-4 bg-amber-300"></div>

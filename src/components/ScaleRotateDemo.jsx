@@ -8,6 +8,8 @@ export default function ScaleRotateDemo() {
     animate(ref.current, {
       scale: [1, 1.3, 1],
       rotate: [0, 180, 0],
+      // ease: "linear",
+      // loop: true,
     });
   };
 
