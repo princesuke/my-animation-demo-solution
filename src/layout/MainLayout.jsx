@@ -59,6 +59,14 @@ export default function Layout() {
             onBeforeNavigate={handleBeforeNavigate}
           >
             Target Position
+          </TransitionLink>{" "}
+          |
+          <TransitionLink
+            to="/anime-vs-motion"
+            className="hover:underline"
+            onBeforeNavigate={handleBeforeNavigate}
+          >
+            Anime vs Motion
           </TransitionLink>
         </nav>
       </div>
