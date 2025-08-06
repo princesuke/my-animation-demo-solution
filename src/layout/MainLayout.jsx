@@ -17,19 +17,40 @@ export default function Layout() {
       }, duration);
     });
 
+  const MenuItem = ({ to, label }) => (
+    <>
+      <TransitionLink
+        to={to}
+        className="hover:underline"
+        onBeforeNavigate={handleBeforeNavigate}
+      >
+        {label}
+      </TransitionLink>
+      &nbsp;|&nbsp;
+    </>
+  );
+
   return (
     <>
       <div className="w-full bg-white shadow">
         <nav className="container mx-auto flex gap-6 py-4 px-4">
-          <TransitionLink
+          <MenuItem to="/" label="Home" />
+          <MenuItem to="/parallax" label="Parallax" />
+          <MenuItem to="/ball-path" label="Ball Path" />
+          <MenuItem to="/scroll-observer" label="Scroll Observer" />
+          <MenuItem to="/target-position" label="Target Position" />
+          <MenuItem to="/anime-vs-motion" label="Anime vs Motion" />
+          <MenuItem to="/text" label="Text Animation" />
+
+          {/* <TransitionLink
             to="/"
             className="hover:underline"
             onBeforeNavigate={handleBeforeNavigate}
           >
             Home
-          </TransitionLink>{" "}
-          |
-          <TransitionLink
+          </TransitionLink>{" "} */}
+
+          {/* <TransitionLink
             to="/parallax"
             className="  hover:underline"
             onBeforeNavigate={handleBeforeNavigate}
@@ -67,7 +88,15 @@ export default function Layout() {
             onBeforeNavigate={handleBeforeNavigate}
           >
             Anime vs Motion
-          </TransitionLink>
+          </TransitionLink>{" "}
+          |
+          <TransitionLink
+            to="/text"
+            className="hover:underline"
+            onBeforeNavigate={handleBeforeNavigate}
+          >
+            Anime vs Motion
+          </TransitionLink> */}
         </nav>
       </div>
       <main>
