@@ -14,13 +14,13 @@ export default function FadeTransition({
         animate(ref.current, {
           opacity: [0, 1],
           duration,
-          easing: "easeInOutQuad",
+          ease: "inOut",
         });
       } else {
         animate(ref.current, {
           opacity: [1, 0],
           duration,
-          easing: "easeInOutQuad",
+          ease: "inOut",
         });
       }
     }

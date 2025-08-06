@@ -2,9 +2,12 @@ import { useState } from "react";
 import { NavLink, Outlet } from "react-router";
 import TransitionLink from "../components/TransitionLink";
 import FadeTransition from "../transitions/FadeTransition";
+import CircleRevealTransition from "../transitions/CircleRevealTransition";
+import SlideWipeTransition from "../transitions/SlideWipeTransition";
+import CatSlideTransition from "../transitions/CatSlideTransition";
 
 export default function Layout() {
-  const duration = 500;
+  const duration = 1000;
   const [isExit, setIsExit] = useState(false);
 
   const handleBeforeNavigate = () =>
@@ -17,12 +20,22 @@ export default function Layout() {
       }, duration);
     });
 
+  // const handleMenuClick = (e) => {
+  // คำนวณจุดกึ่งกลางของ element ที่คลิก
+  // const rect = e.currentTarget.getBoundingClientRect();
+  // mousePosRef.current = {
+  //   x: rect.left + rect.width / 2 + window.scrollX,
+  //   y: rect.top + rect.height / 2 + window.scrollY,
+  // };
+  // };
+
   const MenuItem = ({ to, label }) => (
     <>
       <TransitionLink
         to={to}
         className="hover:underline"
         onBeforeNavigate={handleBeforeNavigate}
+        // onClick={handleMenuClick}
       >
         {label}
       </TransitionLink>
@@ -100,9 +113,9 @@ export default function Layout() {
         </nav>
       </div>
       <main>
-        <FadeTransition duration={duration} isExit={isExit}>
+        <CatSlideTransition duration={duration} isExit={isExit}>
           <Outlet />
-        </FadeTransition>
+        </CatSlideTransition>
       </main>
     </>
   );

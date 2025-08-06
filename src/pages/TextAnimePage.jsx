@@ -21,9 +21,13 @@ export default function TextAnimePage() {
 
     player = animate(chars, {
       // y: ["0rem", "-1rem", "0rem"],
-      y: ["0px", "-10px", "0px"],
+      y: ["0px", "-10px", "10px", "0px"],
+
       loop: true,
       delay: stagger(100),
+      // duration: 1000,  detaul  1;วิ
+      // duration: 100,
+      // ease: "inQuint",
     });
   }
 
